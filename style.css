@@ -19,8 +19,9 @@ body {
   top: 0;
   z-index: 10;
   display: flex;
-  justify-content: center;
-  padding: 1.5rem 0;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
   background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(8px);
 }
@@ -29,6 +30,17 @@ body {
   font-weight: 600;
   font-size: 1.1rem;
   letter-spacing: -0.01em;
+}
+
+.nav-link {
+  color: #111;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.nav-link:hover {
+  color: #555;
 }
 
 .hero {
@@ -85,6 +97,87 @@ h1 {
   transform: translateY(-2px);
 }
 
+.features {
+  padding: 2rem 1.5rem 6rem;
+}
+
+.features-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.5rem;
+  text-align: left;
+}
+
+.feature-icon {
+  width: 28px;
+  height: 28px;
+  color: #111;
+  margin-bottom: 1.25rem;
+}
+
+.feature h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin: 0 0 0.5rem;
+}
+
+.feature p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #6b6b6b;
+  margin: 0;
+}
+
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 3rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 5rem 1.5rem;
+}
+
+.split.reverse {
+  grid-template-columns: 1fr 1fr;
+}
+
+.split.reverse .split-media {
+  order: 2;
+}
+
+.split-media.placeholder {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 24px;
+  background: #ededed;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: 0.8rem;
+  color: #999;
+  margin: 0 0 1rem;
+}
+
+.split-copy h2 {
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0 0 1.25rem;
+}
+
+.split-copy p:not(.eyebrow) {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #555;
+  margin: 0;
+}
+
 .ode {
   background: #111;
   color: #f5f5f5;
@@ -122,6 +215,41 @@ h1 {
   margin: 0 0 0.9rem;
 }
 
+.specs {
+  padding: 6rem 1.5rem;
+  background: #fafafa;
+  text-align: center;
+}
+
+.specs h2 {
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0 0 3rem;
+}
+
+.specs-grid {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.spec-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.1rem 0;
+  border-bottom: 1px solid #e3e3e3;
+  font-size: 1rem;
+}
+
+.spec-row span:first-child {
+  color: #999;
+}
+
+.spec-row span:last-child {
+  font-weight: 500;
+}
+
 .gallery {
   padding: 6rem 1.5rem;
   background: #fff;
@@ -139,6 +267,76 @@ h1 {
   aspect-ratio: 4 / 5;
   border-radius: 20px;
   background: #ededed;
+}
+
+.faq {
+  padding: 6rem 1.5rem;
+  background: #fff;
+  text-align: center;
+}
+
+.faq h2 {
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0 0 3rem;
+}
+
+.faq-list {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.faq-item {
+  border-bottom: 1px solid #e3e3e3;
+}
+
+.faq-question {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 1.5rem 0;
+  font-size: 1.05rem;
+  font-weight: 500;
+  font-family: inherit;
+  color: #111;
+  text-align: left;
+}
+
+.faq-icon {
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: #999;
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+  margin-left: 1rem;
+}
+
+.faq-item.open .faq-icon {
+  transform: rotate(45deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.25s ease, padding 0.25s ease;
+}
+
+.faq-item.open .faq-answer {
+  max-height: 200px;
+  padding-bottom: 1.5rem;
+}
+
+.faq-answer p {
+  margin: 0;
+  color: #666;
+  line-height: 1.6;
+  font-size: 0.98rem;
 }
 
 .cta {
@@ -162,8 +360,27 @@ footer {
   background: #fff;
 }
 
+@media (max-width: 900px) {
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .split,
+  .split.reverse {
+    grid-template-columns: 1fr;
+  }
+
+  .split.reverse .split-media {
+    order: 0;
+  }
+}
+
 @media (max-width: 640px) {
   .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .features-grid {
     grid-template-columns: 1fr;
   }
 }
