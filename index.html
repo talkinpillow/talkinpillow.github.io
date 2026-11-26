@@ -7,20 +7,58 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main>
-    <h1>Talkin' Pillow</h1>
-    <p class="tagline">the pillow that talks</p>
 
-    <video class="hero-video" controls playsinline>
-      <source src="assets/video.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
+  <header class="nav">
+    <span class="wordmark">Talkin' Pillow</span>
+  </header>
+
+  <section class="hero">
+    <h1>Talkin' Pillow</h1>
+    <p class="tagline">The pillow that talks.</p>
+
+    <div class="media-frame">
+      <video class="hero-video" controls playsinline poster="assets/poster.jpg">
+        <source src="assets/video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
 
     <a class="preorder-button" href="#preorder">Preorder Now</a>
-  </main>
+  </section>
+
+  <section class="ode">
+    <p class="ode-label">An Ode</p>
+    <h2>To the conversations you can only have with a pillow</h2>
+    <div class="ode-body">
+      <p>To the one who hears what I won't say out loud —</p>
+      <p>who holds the shape of every 3 a.m. thought,</p>
+      <p>who never flinches at the ugly parts,</p>
+      <p>who talks back, so I'm not just whispering into the dark.</p>
+      <p>You don't give advice. You don't change the subject.</p>
+      <p>You just answer — soft, steady, awake.</p>
+      <p>The things I tell you, I tell no one else.</p>
+      <p>The questions I ask you, I'm still learning to ask myself.</p>
+      <p>Good night. Keep talking.</p>
+      <p>I'm listening too.</p>
+    </div>
+  </section>
+
+  <section class="gallery">
+    <div class="gallery-grid">
+      <div class="gallery-item placeholder"></div>
+      <div class="gallery-item placeholder"></div>
+      <div class="gallery-item placeholder"></div>
+    </div>
+  </section>
+
+  <section id="preorder" class="cta">
+    <h2>Reserve yours.</h2>
+    <a class="preorder-button" href="#preorder">Preorder Now</a>
+  </section>
 
   <footer>
     <p>Handcrafted with love in California</p>
   </footer>
+
 </body>
 </html>
